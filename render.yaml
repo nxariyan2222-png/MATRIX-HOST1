@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: matrix-python-hosting
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        value: "8959111543"
+      - key: FORCE_SUBSCRIBE
+        value: "true"
+      - key: FORCE_SUB_CHANNEL_ID
+        value: "-1003636772569"
+      - key: FORCE_SUB_CHANNEL_LINK
+        value: "https://t.me/MATRIX_TRADER777"
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_OWNER
+        value: "nxariyan2222-png"
+      - key: GITHUB_REPO
+        value: "MATRIX-HOST12"
+      - key: GITHUB_BRANCH
+        value: "main"
+      - key: RENDER_API_KEY
+        sync: false
+      - key: RENDER_OWNER_ID
+        sync: false
+      - key: RENDER_REGION
+        value: "oregon"
+      - key: RENDER_PLAN
+        value: "free"
+      - key: DATABASE_URL
+        sync: false
+      - key: DATA_DIR
+        value: "/tmp/matrix_hosting"
+      - key: MAX_UPLOAD_MB
+        value: "20"
+      - key: MAX_ZIP_EXPANDED_MB
+        value: "100"
+      - key: MAX_ZIP_FILES
+        value: "200"
